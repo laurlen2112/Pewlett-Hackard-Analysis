@@ -1,75 +1,16 @@
---creating tables for PH-EmployeeDB - department
-CREATE TABLE departments (
-	dept_no VARCHAR(4) NOT NULL,
-	dept_name VARCHAR(40) NOT NULL,
-	PRIMARY KEY(dept_no),
-	UNIQUE(dept_name)
-);
+--create a new table 7.3.1
+SELECT first_name, last_name
+INTO retirement_info
+FROM employees
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
 
---Delete table for PH-EmployeeDB - Employees to change the input
-DROP Table employees;
-
-DROP 
-
-CREATE TABLE employees (
-	emp_no INT NOT NULL, 
-	birth_date DATE NOT NULL, 
-	first_Name VARCHAR(40) NOT NULL,
-	Last_Name VARCHAR(40) NOT NULL,
-	gender VARCHAR(7) NOT NULL,
-	hire_date DATE NOT NULL,
-	PRIMARY KEY (emp_no)
-);
-
---Create dept manager table
-CREATE TABLE dept_manager (
-dept_no VARCHAR(4) NOT NULL,
-    emp_no INT NOT NULL,
-    from_date DATE NOT NULL,
-    to_date DATE NOT NULL,
-FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
-    PRIMARY KEY (emp_no, dept_no)
-);
-
---create salary table
-CREATE TABLE salaries (
-  emp_no INT NOT NULL,
-  salary INT NOT NULL,
-  from_date DATE NOT NULL,
-  to_date DATE NOT NULL,
-  FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-  PRIMARY KEY (emp_no)
-);
-
---create title table
-CREATE TABLE titles (
-	emp_no INT NOT NULL,
-	title VARCHAR(50) NOT NULL,
-	from_data DATE NOT NULL,
-	to_date DATE NOT NULL,
-	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-	PRIMARY KEY (emp_no)
-);
-
---create dept_employee table
-CREATE Table dept_emp (
-	emp_no INT NOT NULL,
-	dept_no VARCHAR(4) NOT NULL,
-	from_data DATE NOT NULL,
-	to_date DATE NOT NULL,
-	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-	FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
-	PRIMARY KEY (emp_no)
-);
+--SEE NEW TABLE
+SELECT * FROM retirement_info;
 
 SELECT * FROM departments;
 DROP TABLE employees CASCADE;
 DROP TABLE dept_emp CASCADE;
-
-
-
-
 
 --re-create employee table
 CREATE TABLE employees (
@@ -79,17 +20,6 @@ CREATE TABLE employees (
 	Last_Name VARCHAR(40) NOT NULL,
 	gender VARCHAR(7) NOT NULL,
 	hire_date DATE NOT NULL,
-	PRIMARY KEY (emp_no)
-);
-
---recreate dept_emp table
-CREATE Table dept_emp (
-	emp_no INT NOT NULL,
-	dept_no VARCHAR(4) NOT NULL,
-	from_date DATE NOT NULL,
-	to_date DATE NOT NULL,
-	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-	FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
 	PRIMARY KEY (emp_no)
 );
 
@@ -105,6 +35,7 @@ CREATE Table dept_emp (
 	FOREIGN KEY (dept_no) REFERENCES departments (dept_no)
 );
 
+
 DROP TABLE salaries CASCADE;
 
 --re- create salary table deleted PK emp_no hoping it will nullify issues of
@@ -117,15 +48,10 @@ CREATE TABLE salaries (
   FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
 
---search for bdays btwn 1952 - 1955, 10,000 + results
-SELECT first_name, last_name
-FROM employees
-WHERE birth_date BETWEEN '1952-01-01' AND '1955-12-31';
 
---search for bdays in 1952
-SELECT first_name, last_name
-FROM employees
-WHERE birth_date BETWEEN '1952-01-01' AND '1952-12-31';
+SELECT * FROM employees;
+SELECT * FROM titles;
+
 
 --search for bdays btwn 1952 - 1955, 90,398 + results
 SELECT first_name, last_name
@@ -154,6 +80,11 @@ SELECT first_name, last_name
 FROM employees
 WHERE birth_date BETWEEN '1955-01-01' AND '1955-12-31';
 
+-- Retirement eligibility
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1955-12-31';
+
 -- Retirement eligibility, 41,380 results
 SELECT first_name, last_name
 FROM employees
@@ -176,4 +107,3 @@ AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
 --SEE NEW TABLE
 SELECT * FROM retirement_info;
 
---continue with 7.3.2
