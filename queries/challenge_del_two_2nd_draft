@@ -1,0 +1,35 @@
+DROP TABLE test_test
+DROP TABLE test_3
+
+SELECT e.emp_no,
+	   e.first_name,
+	   e.last_name,
+	   e.birth_date,
+	  -- de.from_date, 
+	  -- de.to_date,
+	   ti.title
+INTO test_test
+FROM employees as e
+	left JOIN titles as ti
+		ON(e.emp_no = ti.emp_no)
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+--AND (de.to_date = '9999-01-01')
+ORDER BY emp_no;
+
+inner JOIN e
+		ON(e.emp_no = ti.emp_no)
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+AND (de.to_date = '9999-01-01')
+ORDER BY emp_no;
+
+SELECT DISTINCT ON (emp_no) emp_no,
+				 first_name,last_name, birth_date, title
+				 --from_date, to_date, title
+--INTO test_3
+FROM test_test
+ORDER BY emp_no
+
+Select * FROM test_3
+ORDER BY emp_no
+from test_test
+ORDER BY emp_no;

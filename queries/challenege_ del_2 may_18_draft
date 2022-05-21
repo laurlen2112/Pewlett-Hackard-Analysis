@@ -1,0 +1,45 @@
+drop table mentorship
+---copy paste from LA-- employee 1 and 3 are off
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+  e.first_name,
+  e.last_name,
+  e.birth_date,
+  de.from_date,
+  de.to_date,
+  ti.title
+INTO mentorship
+FROM employees as e
+INNER JOIN dept_emp as de
+  ON (e.emp_no = de.emp_no)
+INNER JOIN titles as ti
+  ON (e.emp_no = ti.emp_no)
+WHERE (de.to_date = '9999-01-01')
+AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+ORDER BY e.emp_no;
+
+SELECT * FROM mentorship
+
+
+--tried 2 steps 1) join and distinct, 2) filter on 9999 end date
+--result is that employee 3 is wrong, should be staff not Sr. Staff; employee 8 is ok
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+  e.first_name,
+  e.last_name,
+  e.birth_date,
+  de.from_date,
+  de.to_date,
+  ti.title
+INTO mentorship
+FROM employees as e
+INNER JOIN dept_emp as de
+  ON (e.emp_no = de.emp_no)
+INNER JOIN titles as ti
+  ON (e.emp_no = ti.emp_no)
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+ORDER BY e.emp_no;
+
+--sort by end date
+SELECT * FROM mentorship
+WHERE (mentorship.to_date = '9999-01-01')
+
+drop table mentorship
