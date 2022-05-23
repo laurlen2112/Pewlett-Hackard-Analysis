@@ -16,6 +16,8 @@ In an effort to "future-proof" their company, Pewlett-Hackard (PH), is scrutiniz
 
 # Summary:
 
-address 2 questions and purpose 2 additional queries
+Based on this analysis, the information shows that the number of projected retirements is larger than number of employees eligible for a mentorship program because about 72,000 employees are projected to retire and only about 1550 employees qualify for the mentorship program.  The data shows that there are enough retirment-ready employees to mentor the mentor-eligible employees.
 
-As a long term strategy, P
+The pool of employees eligible for the mentorship program were choosen based on the birth year of 1965.  PH can enlarge the pool of employees eligible for the mentorship program by expanding the birth year filter in additional queries.  Additionally, it should create a table similar to the Retiring Titles table, that shows the count of possible mentorship employees grouped by title.  This will provide a good comparison point to get a sense of how many employees are due to retire with employees eligible for the mentorship program. 
+
+PH should also drill down on the data provided in the Retiring Titles CSV, which shows a large amount of Senior Engineers and Senior Staff due to retire. For example, it could run additonal queries to show which departments these employees work within.  This will show if there is an even distribution of proejected retirements among departments or if one or more departments may have a larger retirement pool, which means that department would need additional resources to replace retirments.  
