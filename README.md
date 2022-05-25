@@ -11,7 +11,7 @@ In an effort to "future-proof" the company, Pewlett-Hackard (PH) is scrutinizing
 
 * The ["Retiring Titles"](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/retiring%20titles.png) CSV shows anticipated retirements [grouped by](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/del_1_count_code.png) job title and counts the expected retirements per position.  Based on this information, the Senior Engineer and the Senior Staff positions will realize the most vacancies due to retirment.
 
-* The ["Mentorship Eligibility"](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/mentorship_elig.png) CSV depicts that over 1500 employees are eligible for the mentorship program.  Employees were filtered based on birth year and "distinct on" elimiated duplicate entries.  [This query](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/del_2_code.png) returns employee number, first and last name, birth date, "to" and "from" date, and title.  
+* The ["Mentorship Eligibility"](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/mentorship_elig.png) CSV depicts that over 1500 employees are eligible for the mentorship program.  Employees were filtered based on birth year and "distinct on" elimiated duplicate entries.  [This query](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/del_2_code.png) returns employee number, name, birth date, "to" and "from" date, and title.  
 
 
 # Summary:
