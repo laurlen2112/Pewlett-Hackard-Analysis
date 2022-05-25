@@ -16,7 +16,7 @@ In an effort to "future-proof" the company, Pewlett-Hackard (PH) is scrutinizing
 
 # Summary:
 
-Based on this analysis, 72,458 employees will likely retire.  Since there are 1549 employees that qualify for the mentorship program, the data also confirms that there are enough retirement-ready employees to mentor employees eligible for the mentorship program.
+Based on this analysis, 72,458 employees will likely retire leaving vacancies in those roles.  Since there are 1549 employees that qualify for the mentorship program, the data also confirms that there are enough retirement-ready employees to mentor employees eligible for the mentorship program.
 
 The current pool of mentorship-eligible employees is small because they were chosen based on the birth year of 1965.  By contrast, the pool of retirement-ready employees was filtered by birth year over a 3 year span, 1952 to 1955, resulting in a much larger number of retirement-ready employees.  Therefore, it is suggested that PH enlarge the pool of mentorship-eligible employees by expanding the birth year filter in subsequent queries. 
 
