@@ -1,11 +1,11 @@
 # Module 7: Pewlett-Hackard Analysis
 
 # Purpose and Overview:
-In an effort to "future-proof" the company, Pewlett-Hackard (PH) is scrutinizing their records to determine which employees will likely retire based on birth year and which employees are eligible for a mentorship program.  The analysis was completed using PostgreSQL and PG Admin.
+In an effort to "future-proof" the company, Pewlett-Hackard (PH) is scrutinizing their records to determine which employees will likely retire based on birth year and which employees are eligible for a mentorship program.  This analysis was completed using PostgreSQL and PG Admin.
 
 # Results: 
 
-* The "Retirement Titles" CSV calculates that over 133,000 employees are due to retire based on [birth year over a 3 year span](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/del_1_retirement_code.png).  This query returns employee number, employee name, job title, and "to" and "from" dates.  This query over-anticipates the number of retiring employees because it captures employees with their previous and current job titles so there are duplicate entries.  By way of example, employee number 10004 is listed on rows 3 and 4 of [this CSV](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/retirement_titles_CSV.png) holding a different job title in each row.
+* The "Retirement Titles" CSV calculates that over 133,000 employees are due to retire based on [birth year](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/del_1_retirement_code.png).  This query returns employee number, employee name, job title, and "to" and "from" dates.  This query over-anticipates the number of retiring employees because it captures employees with their previous and current job titles so there are duplicate entries.  By way of example, employee number 10004 is listed on rows 3 and 4 of [this CSV](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/retirement_titles_CSV.png) holding a different job title in each row.
 
 * The "Unique Titles" CSV forecasts that over 72,000 employees will retire.  The CSV contains employee number, name, and title.  This query uses the ["distinct on"](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/del_%201_unique_titles_code.png) ability of PostgreSQL to filter out the duplicate entries described above.  For example, [here](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/unique_titles_csv.png), employee number 10004 is only visible on row 3 of this CSV in his current position as Senior Engineer.
 
@@ -18,7 +18,7 @@ In an effort to "future-proof" the company, Pewlett-Hackard (PH) is scrutinizing
 
 Based on this analysis, the information shows that the number of projected retirements is 72,458 employees. Since there are 1549 employees that qualify for the mentorship program, the data also confirms that there are enough retirement-ready employees to mentor the employees eligible for the mentorship program.
 
-The current pool of mentorship-eligible employees is small because they were chosen based on the birth year of 1965.  By contrast, the pool of retirement-ready employees was filtered by birth year from 1952 to 1955.  Since the retire-ready employees are filtered on a 3 year span, their number is much greater than the mentorship-eligible employees.  Therefore, it is suggested that PH enlarge the pool of mentorship-eligible employees by expanding the birth year filter in subsequent queries. 
+The current pool of mentorship-eligible employees is small because they were chosen based on the birth year of 1965.  By contrast, the pool of retirement-ready employees was filtered by birth year over a 3 year span from 1952 to 1955 resulting in a much larger number of retire-ready employees.  Therefore, it is suggested that PH enlarge the pool of mentorship-eligible employees by expanding the birth year filter in subsequent queries. 
 
 Additionally, it should create a table similar to the "Retiring Titles" table that contains the count of mentorship-eligible employees [grouped by title](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/suggested_code.png).  The resulting [table](https://github.com/laurlen2112/Pewlett-Hackard-Analysis/blob/main/resources/mentor_vs_retire.png) will enable PH to easily compare the mentorship-eligible employees on a per title basis with the retiring employees on a per title basis.
  
