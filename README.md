@@ -1,4 +1,4 @@
-# Module 7: Pewlett-Hackard Analysis
+# Pewlett-Hackard Analysis
 
 # Purpose and Overview:
 In an effort to "future-proof" the company, Pewlett-Hackard (PH) is scrutinizing their records to determine which employees will likely retire based on birth year and which employees are eligible for a mentorship program.  This analysis was completed using PostgreSQL and PG Admin.
